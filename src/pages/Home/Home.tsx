@@ -95,14 +95,14 @@ const PageHome = () => {
         </span>
       </section>
 
-      <section className="flex min-h-screen w-full flex-col bg-black px-4 py-8 sm:px-6 sm:py-10 lg:px-10">
+      <section className="flex min-h-screen w-full flex-col bg-cyan-400 px-4 py-8 sm:px-6 sm:py-10 lg:px-10">
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 xl:flex-row xl:items-start">
           <div className="flex w-full flex-col gap-6 items-center lg:items-start">
             <div className="">
-              <span className="text-3xl text-white sm:text-4xl">What is sparkle?</span>
+              <span className="text-3xl text-white sm:text-4xl font-bold">What is sparkle?</span>
             </div>
             {/* boxes for explainers */}
-            <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
+            <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-1 sm:gap-6">
               <div className="flex min-h-56 w-full flex-col gap-2 rounded bg-amber-300 p-4 sm:min-h-64 sm:p-5">
                 <span className="text-2xl font-bold sm:text-3xl">1.</span>
                 <span className="text-xl sm:text-2xl">
@@ -126,34 +126,6 @@ const PageHome = () => {
                 <span className="text-2xl font-bold sm:text-3xl">4.</span>
                 <span className="text-xl sm:text-2xl">
                   <b>Earn cool prizes!</b> You and your friend earn a reward!
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className="flex w-full flex-col gap-6 items-center lg:items-start">
-            <div className="">
-              <span className="text-3xl text-white sm:text-4xl">Rewards?</span>
-            </div>
-            {/* boxes for explainers */}
-            <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
-              <div className="flex min-h-56 w-full flex-col gap-2 rounded bg-cyan-200 p-4 sm:min-h-64 sm:p-5">
-                <span className="text-xl sm:text-2xl">
-                  reward 1 img
-                </span>
-              </div>
-              <div className="flex min-h-56 w-full flex-col gap-2 rounded bg-cyan-200 p-4 sm:min-h-64 sm:p-5">
-                <span className="text-xl sm:text-2xl">
-                  reward 2 img
-                </span>
-              </div>
-              <div className="flex min-h-56 w-full flex-col gap-2 rounded bg-cyan-200 p-4 sm:min-h-64 sm:p-5">
-                <span className="text-xl sm:text-2xl">
-                  reward 3 img
-                </span>
-              </div>
-              <div className="flex min-h-56 w-full flex-col gap-2 rounded bg-cyan-200 p-4 sm:min-h-64 sm:p-5">
-                <span className="text-xl sm:text-2xl">
-                  reward 4 img
                 </span>
               </div>
             </div>
