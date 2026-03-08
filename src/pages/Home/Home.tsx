@@ -1,7 +1,28 @@
 import hc_flag from "@/assets/hc-flag-white.svg";
 import sparkle_bg_1920x1080 from "@/assets/sparkle_bg_1920x1080.webp";
 import sparkle_bg_2560x1440 from "@/assets/sparkle_bg_2560x1440.webp";
-import { useEffect, useState } from "react";
+import { type ReactNode, useEffect, useState } from "react";
+import cloud from "@/assets/cloud.png";
+
+type CloudStepCardProps = {
+  step: string;
+  children: ReactNode;
+};
+
+const CloudStepCard = ({ step, children }: CloudStepCardProps) => {
+  return (
+    <div
+      className="mx-auto flex w-full aspect-12/10 flex-col items-center justify-center rounded bg-size-[130%_auto] bg-center bg-no-repeat px-10 text-center sm:max-w-xl sm:bg-size-[120%_auto] sm:px-16 sm:py-10 md:max-w-2xl md:bg-size-[110%_auto] md:px-20 lg:max-w-3xl"
+      style={{ backgroundImage: `url(${cloud})` }}
+    >
+      <div className="flex flex-col text-left w-7/10">
+        <span className="text-3xl font-bold sm:text-4xl">{step}.</span>
+        <span className="text-2xl leading-tight lg:text-3xl">{children}</span>
+      </div>
+    </div>
+  );
+};
+
 const PageHome = () => {
   const [email, setEmail] = useState("");
   const bg_1920x1080 = sparkle_bg_1920x1080;
@@ -90,44 +111,34 @@ const PageHome = () => {
             </button>
           </div>
         </div>
-        <span className="absolute bottom-10 text-xl text-white drop-shadow-xl bg-">
+        <span className="absolute bottom-10 text-xl text-white drop-shadow-xl">
           Scroll down to learn more!
         </span>
       </section>
 
       <section className="flex min-h-screen w-full flex-col bg-cyan-400 px-4 py-8 sm:px-6 sm:py-10 lg:px-10">
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 xl:flex-row xl:items-start">
-          <div className="flex w-full flex-col gap-6 items-center lg:items-start">
+          <div className="flex w-full flex-col items-center lg:items-start">
             <div className="">
-              <span className="text-3xl text-white sm:text-4xl font-bold">What is sparkle?</span>
+              <span className="text-3xl text-white sm:text-4xl font-bold">
+                What is sparkle?
+              </span>
             </div>
             {/* boxes for explainers */}
-            <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-1 sm:gap-6">
-              <div className="flex min-h-56 w-full flex-col gap-2 rounded bg-amber-300 p-4 sm:min-h-64 sm:p-5">
-                <span className="text-2xl font-bold sm:text-3xl">1.</span>
-                <span className="text-xl sm:text-2xl">
-                  <b>Get a friend</b> and invite them to join you
-                </span>
-              </div>
-              <div className="flex min-h-56 w-full flex-col gap-2 rounded bg-amber-300 p-4 sm:min-h-64 sm:p-5">
-                <span className="text-2xl font-bold sm:text-3xl">2.</span>
-                <span className="text-xl sm:text-2xl">
-                  <b>Learn together.</b> Make your friend teach you a new skill.
-                  Or maybe a new language?
-                </span>
-              </div>
-              <div className="flex min-h-56 w-full flex-col gap-2 rounded bg-amber-300 p-4 sm:min-h-64 sm:p-5">
-                <span className="text-2xl font-bold sm:text-3xl">3.</span>
-                <span className="text-xl sm:text-2xl">
-                  <b>Track your progress</b> via [placeholder]
-                </span>
-              </div>
-              <div className="flex min-h-56 w-full flex-col gap-2 rounded bg-amber-300 p-4 sm:min-h-64 sm:p-5">
-                <span className="text-2xl font-bold sm:text-3xl">4.</span>
-                <span className="text-xl sm:text-2xl">
-                  <b>Earn cool prizes!</b> You and your friend earn a reward!
-                </span>
-              </div>
+            <div className="flex w-full flex-col -space-y-15 sm:-space-y-24 lg:-space-y-44">
+              <CloudStepCard step="1">
+                <b>Get a friend</b> and invite them to join you
+              </CloudStepCard>
+              <CloudStepCard step="2">
+                <b>Learn together.</b> Make your friend teach you a new skill.
+                Or maybe a new language?
+              </CloudStepCard>
+              <CloudStepCard step="3">
+                <b>Track your progress</b> via [placeholder]
+              </CloudStepCard>
+              <CloudStepCard step="4">
+                <b>Earn cool prizes!</b> You and your friend earn a reward!
+              </CloudStepCard>
             </div>
           </div>
         </div>
